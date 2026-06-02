@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# uv / virtualenv (uv.lock IS committed)
+.venv/
+
+# OS / editor cruft
+.DS_Store
+*.swp

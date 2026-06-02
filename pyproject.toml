@@ -1,0 +1,24 @@
+[project]
+name = "frobozz"
+version = "0.1.0"
+description = "Turn-by-turn z-machine interpreter for playing interactive fiction at the CLI"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1",
+    # The z-machine interpreter (xyppy) is vendored under src/frobozz/vendor/,
+    # so the tool stands alone with no engine dependency.
+]
+
+[project.scripts]
+frobozz = "frobozz.cli:main"
+
+[dependency-groups]
+dev = ["ruff>=0.11"]
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+# Vendored third-party interpreter; lint/format our code only.
+extend-exclude = ["src/frobozz/vendor"]
